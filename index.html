@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo"><img width="90" height="70" src="images/logoEcommerce.png" alt=""></a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="pageConnexion.php">Connexion</a></li>
+                <li><a href="Deconnexion.php">Déconnexion</a></li>
+                <li class="dropdown">
+                    <a href="#">Test <ion-icon name="caret-down-outline"></ion-icon></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Test</a></li>
+                        <li><a href="#">Test</a></li>
+                        <li><a href="#">Test</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Test</a></li>
+            </ul>
+            <div class="Rechercher">
+                <span class="icon">
+                    <ion-icon name="search-outline" class="SearchBtn"></ion-icon>
+                    <ion-icon name="close-outline" class="CloseBtn"></ion-icon>
+                </span>
+            </div>
+        </div>
+        <div class="SearchBox">
+            <input type="text" placeholder="Rechercher . . .">
+        </div>
+    </header>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let SearchBtn = document.querySelector('.SearchBtn');
+        let CloseBtn = document.querySelector('.CloseBtn');
+        let SearchBox = document.querySelector('.SearchBox');
+        let navigation = document.querySelector('.navigation');
+        let header = document.querySelector('header');
+        let lastScrollPosition = window.pageYOffset;
+
+        SearchBtn.onclick = function() {
+            SearchBox.classList.add('active');
+            CloseBtn.classList.add('active');
+            SearchBtn.classList.add('active');
+        }
+
+        CloseBtn.onclick = function() {
+            SearchBox.classList.remove('active');
+            CloseBtn.classList.remove('active');
+            SearchBtn.classList.remove('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            let currentScrollPosition = window.pageYOffset;
+            
+            if (currentScrollPosition > lastScrollPosition) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+
+            lastScrollPosition = currentScrollPosition;
+        });
+    </script>
+    <script src="app.js"></script>
+
+    <!-- Patie Articles -->
+
+    <section id="cars">
+        <h1 class="section_title">Nos Articles</h1>
+        <div class="images">
+            <ul>
+                <li class="car">
+                   <div>
+                       <img src="images/pc2.jpg" alt="">
+                   </div>
+                   <span>Article</span>
+                   <span class="prix">0$</span>
+                   <button><a href="#">ACHETER MAINTENANT</a></button>
+                </li>
+                <li class="car">
+                    <div>
+                        <img src="#" alt="">
+                    </div>
+                    <span>Article</span>
+                    <span class="prix">0$</span>
+                    <button><a href="#">ACHETER MAINTENANT</a></button>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="#" alt="">
+                    </div>
+                    <span>Article</span>
+                    <span class="prix">0$</span>
+                    <button><a href="#">ACHETER MAINTENANT</a></button>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="#" alt="">
+                    </div>
+                    <span>Article</span>
+                    <span class="prix">0$</span>
+                    <button><a href="#">ACHETER MAINTENANT</a></button>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="#" alt="">
+                    </div>
+                    <span>Article</span>
+                    <span class="prix">0$</span>
+                    <button><a href="#">ACHETER MAINTENANT</a></button>
+                 </li>
+                 <li class="car">
+                    <div>
+                        <img src="#" alt="">
+                    </div>
+                    <span>Article</span>
+                    <span class="prix">0$</span>
+                    <button><a href="#">ACHETER MAINTENANT</a></button>
+                 </li>
+            </ul>
+        </div>
+    </section>   
+
+    <script>
+
+        var menu_toggle = document.querySelector('.menu_toggle');
+        var menu = document.querySelector('.menu');
+        var menu_toggle_span = document.querySelector('.menu_toggle span');
+
+        menu_toggle.onclick = function(){
+            menu_toggle.classList.toggle('active');
+            menu_toggle_span.classList.toggle('active');
+            menu.classList.toggle('responsive') ;
+        }
+
+    </script>
+</body>
+</html>
