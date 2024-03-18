@@ -10,7 +10,7 @@
 </head>
 <body>
     
-<?php include("Navbar.php")?>
+<?php include("navbar.php")?>
 
     <!-- Patie Articles -->
 

@@ -13,11 +13,30 @@
             box-sizing: border-box;
         }
 
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        .links {
+            position: fixed;
+            top: 80px; 
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+        }
+
         .header{
             background-color: #000000;
-            display: flex; /* Modification */
-            justify-content: space-between; /* Modification */
-            align-items: center; /* Modification */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0px 25px;
             height: 80px;
         }
