@@ -106,6 +106,5 @@
         });
     </script>
 
-    <p>Bastien ta mere</p>
 </body>
 </html>
