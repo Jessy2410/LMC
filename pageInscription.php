@@ -8,49 +8,61 @@
 </head>
 <body>
 
-    <div class="box">
-<form action="" method="post">
+<div class="box">
+    <form action="" method="post">
         <h2>Inscrivez-vous</h2>
 
         <div class="inputBox">
-        <input type="text" name="nom" required="required">
-        <span>Nom :</span>
-        <i></i>
+            <input type="text" name="nom" required="required">
+            <span>Nom :</span>
+            <i></i>
         </div>
 
         <div class="inputBox">
-        <input type="text" name="prenom" required="required">
-        <span>Prénom :</span>
-        <i></i>
+            <input type="text" name="prenom" required="required">
+            <span>Prénom :</span>
+            <i></i>
         </div>
 
         <div class="inputBox">
-        <input type="text" name="pseudo" required="required">
-        <span>Pseudo :</span>
-        <i></i>
+            <input type="text" name="mail" required="required">
+            <span>E-Mail :</span>
+            <i></i>
         </div>
 
         <div class="inputBox">
-        <input type="text" name="mail" required="required">
-        <span>E-Mail :</span>
-        <i></i>
-        </div>
-    
-        <div class="inputBox">
-        <input type="password" name="mdp" required="required">
-        <span>Mot de passe :</span>
-        <i></i>
+            <input type="password" name="mdp" required="required">
+            <span>Mot de passe :</span>
+            <i></i>
         </div>
 
         <div class="links">
-                <a href="pageConnexion.php">Se connecter</a>
+            <a href="pageConnexion.php">Se connecter</a>
         </div>
         <input type="submit" value="S'inscrire" name="Bouton">
-
-        
-
-</form>
+    </form>
 </div>  
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Bouton'])) {
+    $connexion = mysqli_connect("localhost", "root", "CDadvtam7347!", "lmc");
+    if ($connexion === false) {
+        die("Erreur : Impossible de se connecter. " . mysqli_connect_error());
+    }
+    $nom = $_POST['nom'];   
+    $prenom = $_POST['prenom'];
+    $email = $_POST['mail'];
+    $mot_de_passe = $_POST['mdp'];
+    $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+    $requete = "INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe) 
+                VALUES ('$nom', '$prenom', '$email', '$mot_de_passe_hash')";
+    if (mysqli_query($connexion, $requete)) {
+        echo "<script>alert('Inscription réussie !');</script>";
+    } else {
+        echo "<script>alert('Erreur : Impossible de s\\'inscrire. " . mysqli_error($connexion) . "');</script>";
+    }
+    mysqli_close($connexion);
+}
+?>
 </body>
 </html>

@@ -29,7 +29,7 @@
 
         .logo img{
             color: rgb(250, 70, 70);
-            height: 50px;
+            height: 75px;
         }
 
         .rechercher {
@@ -62,6 +62,7 @@
             color: rgb(250, 70, 70);
         }
         .links{
+            margin-top: 80px;
             background-color: #000000;
             height: 0;
             transition: 0.6s;
@@ -73,7 +74,19 @@
             padding: 15px;
             font-size: 18px;
         }
+        .links a:hover{
+            color: rgb(250, 70, 70); 
+        }
 
+        .links .nav-link {
+            display: none; /* Cacher les liens par défaut */
+            color: white; /* Ajouter les styles appropriés */
+            text-decoration: none;
+        }
+
+        .links.showlinks .nav-link {
+            display: block; /* Afficher les liens lorsque la classe showlinks est présente */
+        }
         .showlinks{
             height: 50vh;
         }
@@ -97,12 +110,12 @@
         </div>
     </div>
     <div class="links">
-        <a href="#">Profil</a>
-        <a href="#">Articles</a>
-        <a href="#">Mon panier</a>
-        <a href="#">Mes favoris</a>
-        <a href="#">Se connecter</a>
-        <a href="#">Besoin d'aide</a>
+        <a class="nav-link" href="#">Profil</a>
+        <a class="nav-link" href="#">Articles</a>
+        <a class="nav-link" href="#">Mon panier</a>
+        <a class="nav-link" href="#">Mes favoris</a>
+        <a class="nav-link" href="pageConnexion.php">Se connecter</a>
+        <a class="nav-link" href="#">Besoin d'aide</a>
     </div>
 
     <script>

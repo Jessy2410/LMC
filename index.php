@@ -16,11 +16,11 @@
 
     <!-- Patie Articles -->
 
-    <section id="cars">
+    <section id="article">
         <h1 class="section_title">Nos Articles</h1>
         <div class="images">
             <ul>
-                <li class="car">
+                <li class="art">
                    <div>
                        <img src="images/pc2.jpg" alt="">
                    </div>
@@ -28,7 +28,7 @@
                    <span class="prix">0$</span>
                    <button><a href="#">ACHETER MAINTENANT</a></button>
                 </li>
-                <li class="car">
+                <li class="art">
                     <div>
                         <img src="#" alt="">
                     </div>
@@ -36,7 +36,7 @@
                     <span class="prix">0$</span>
                     <button><a href="#">ACHETER MAINTENANT</a></button>
                  </li>
-                 <li class="car">
+                 <li class="art">
                     <div>
                         <img src="#" alt="">
                     </div>
@@ -44,7 +44,7 @@
                     <span class="prix">0$</span>
                     <button><a href="#">ACHETER MAINTENANT</a></button>
                  </li>
-                 <li class="car">
+                 <li class="art">
                     <div>
                         <img src="#" alt="">
                     </div>
@@ -52,7 +52,7 @@
                     <span class="prix">0$</span>
                     <button><a href="#">ACHETER MAINTENANT</a></button>
                  </li>
-                 <li class="car">
+                 <li class="art">
                     <div>
                         <img src="#" alt="">
                     </div>
@@ -60,7 +60,7 @@
                     <span class="prix">0$</span>
                     <button><a href="#">ACHETER MAINTENANT</a></button>
                  </li>
-                 <li class="car">
+                 <li class="art">
                     <div>
                         <img src="#" alt="">
                     </div>
