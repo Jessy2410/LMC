@@ -1,63 +1,109 @@
-<header>
-        <a href="#" class="logo"><img width="90" height="70" src="images/logoEcommerce.png" alt=""></a>
-        <div class="group">
-            <ul class="navigation">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="pageConnexion.php">Connexion</a></li>
-                <li><a href="Deconnexion.php">Déconnexion</a></li>
-                <li class="dropdown">
-                    <a href="#">Test <ion-icon name="caret-down-outline"></ion-icon></a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Test</a></li>
-                        <li><a href="#">Test</a></li>
-                        <li><a href="#">Test</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Test</a></li>
-            </ul>
-            <div class="Rechercher">
-                <span class="icon">
-                    <ion-icon name="search-outline" class="SearchBtn"></ion-icon>
-                    <ion-icon name="close-outline" class="CloseBtn"></ion-icon>
-                </span>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+
+        .header{
+            background-color: #000000;
+            display: flex; /* Modification */
+            justify-content: space-between; /* Modification */
+            align-items: center; /* Modification */
+            padding: 0px 25px;
+            height: 80px;
+        }
+
+        .logo img{
+            color: rgb(250, 70, 70);
+            height: 50px;
+        }
+
+        .rechercher {
+            margin-right: auto;
+            margin-left: 450px;
+        }
+
+        .rechercher input{
+            height: 35px;
+            width: 250%;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .icons{
+            text-align: right;
+        }
+
+        .icons .fa{
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 0px 10px;
+            transition: 0.4s;
+        }
+        .fa:hover{
+            color: rgb(250, 70, 70);
+        }
+        .links{
+            background-color: #000000;
+            height: 0;
+            transition: 0.6s;
+        }
+        .links a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        .showlinks{
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#"><img src="images/logoEcommerce.png" alt=""></a>
         </div>
-        <div class="SearchBox">
-            <input type="text" placeholder="Rechercher . . .">
+        <div class="rechercher">
+            <form>
+                <input type="text" placeholder="Rechercher..." id="">
+            </form>
         </div>
-    </header>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <div class="icons">
+            <a href="#" class="fa fa-heart"></a>
+            <a href="#" class="fa fa-shopping-cart"></a>
+            <a href="#" class="fa fa-user-circle"></a>
+            <a href="#" class="fa fa-reorder"></a>
+        </div>
+    </div>
+    <div class="links">
+        <a href="#">Profil</a>
+        <a href="#">Articles</a>
+        <a href="#">Mon panier</a>
+        <a href="#">Mes favoris</a>
+        <a href="#">Se connecter</a>
+        <a href="#">Besoin d'aide</a>
+    </div>
 
     <script>
-        let SearchBtn = document.querySelector('.SearchBtn');
-        let CloseBtn = document.querySelector('.CloseBtn');
-        let SearchBox = document.querySelector('.SearchBox');
-        let navigation = document.querySelector('.navigation');
-        let header = document.querySelector('header');
-        let lastScrollPosition = window.pageYOffset;
-
-        SearchBtn.onclick = function() {
-            SearchBox.classList.add('active');
-            CloseBtn.classList.add('active');
-            SearchBtn.classList.add('active');
-        }
-
-        CloseBtn.onclick = function() {
-            SearchBox.classList.remove('active');
-            CloseBtn.classList.remove('active');
-            SearchBtn.classList.remove('active');
-        }
-
-        window.addEventListener('scroll', function() {
-            let currentScrollPosition = window.pageYOffset;
-            
-            if (currentScrollPosition > lastScrollPosition) {
-                header.classList.add('hide');
-            } else {
-                header.classList.remove('hide');
-            }
-
-            lastScrollPosition = currentScrollPosition;
+        document.getElementsByClassName("fa")[3].addEventListener("click", function(){
+            document.getElementsByClassName("links")[0].classList.toggle("showlinks");
         });
     </script>
+</body>
+</html>
