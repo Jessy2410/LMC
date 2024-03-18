@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/3010b1eaf1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!-- Partie Navbar -->
     
 <?php include("navbar.php")?>
 

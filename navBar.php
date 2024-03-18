@@ -13,26 +13,12 @@
             box-sizing: border-box;
         }
 
-        .header {
+        .header{
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
-        }
-
-        body {
-            padding-top: 80px;
-        }
-
-        .links {
-            position: fixed;
-            top: 80px; 
             left: 0;
             width: 100%;
-            background-color: #000000;
-        }
-
-        .header{
+            z-index: 1000;
             background-color: #000000;
             display: flex;
             justify-content: space-between;
