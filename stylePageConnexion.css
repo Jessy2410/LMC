@@ -11,58 +11,16 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #545557;
+    background: #575454;
 }
 
 .box{
     position: relative;
     width: 380px;
     height: 420px;
-    background: #1c1c1c;
+    background: #a42d2d;
     border-radius: 8px;
     overflow: hidden;
-}
-
-.box::before{
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#fa0000,#fa0000,#fa0000);
-    z-index: 1;
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-}
-
-.box::after{
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#fa0000,#fa0000,#fa0000);
-    z-index: 1;
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-    animation-delay: -15s;
-}
-
-
-
-
-
-@keyframes animate{
-    0%
-    {
-        transform: rotate(0deg);
-    }
-    100%
-    {
-        transform: rotate(360deg);
-    }
 }
 
 .box form{
@@ -97,30 +55,10 @@ body{
     outline: none;
     border: none;
     box-shadow: none;
-    color: #23242a;
+    color: #ffffff;
     font-size: 1em;
     letter-spacing: 0.05em;
-    transition: 0.5s;
     z-index: 10;
-}
-
-.box form .inputBox span{
-    position: absolute;
-    left: 0;
-    padding: 20px 0px 10px;
-    pointer-events: none;
-    color: #8f8f8f;
-    font-size: 1em;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-}
-
-.box form .inputBox input:valid ~ span,
-.box form .inputBox input:focus ~ span 
-{
-    color: #fff;
-    font-size: 0.75em;
-    transform: translateY(-34px);
 }
 
 .box form .inputBox i{
@@ -132,15 +70,9 @@ body{
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
-    transition: 0.5s;
     pointer-events: none;
 }
 
-.box form .inputBox input:valid ~ i,
-.box form .inputBox input:focus ~ i 
-{
-    height: 44px;
-}
 
 .box form .links{
     display: flex;
@@ -151,11 +83,11 @@ body{
 .box form .links:hover{
     display: flex;
     justify-content: space-between;
-    color:#fa0000
+    color:#cb0f0f;
 }
 
 .box form .links a{
-    margin: 10px 0;
+    margin: 23px 0;
     font-size: 0.75em;
     color: #8f8f8f;
     text-decoration: none;
@@ -168,6 +100,8 @@ body{
 }
 
 .box form input[type="submit"]{
+    position: relative;
+    top: 8px;
     border: none;
     outline: none;
     transition: all 0.5s ease;
@@ -182,7 +116,7 @@ body{
 }
 
 .box form input[type="submit"]:hover{
-    background: #fa0000;
+    background: #a91f1f;
     color: #fff;
 }
 

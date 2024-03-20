@@ -13,13 +13,11 @@
     <form method="post" action="">
         <h2>Connectez-vous</h2>
         <div class="inputBox">
-            <input type="text" name="mail" required="required">
-            <span>E-Mail :</span>
+            <input type="text" name="mail" required="required" placeholder="Mail :">
             <i></i>
         </div>
         <div class="inputBox">
-            <input type="password" name="mdp" required="required">
-            <span>Mot de passe :</span>
+            <input type="password" name="mdp" required="required" placeholder="Mot de passe :">
             <i></i>
         </div>
         <div class="links">

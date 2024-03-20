@@ -13,26 +13,22 @@
         <h2>Inscrivez-vous</h2>
 
         <div class="inputBox">
-            <input type="text" name="nom" required="required">
-            <span>Nom :</span>
+            <input type="text" name="nom" required="required" placeholder="Nom :">
             <i></i>
         </div>
 
         <div class="inputBox">
-            <input type="text" name="prenom" required="required">
-            <span>Prénom :</span>
+            <input type="text" name="prenom" required="required" placeholder="Prénom :">
             <i></i>
         </div>
 
         <div class="inputBox">
-            <input type="text" name="mail" required="required">
-            <span>E-Mail :</span>
+            <input type="text" name="mail" required="required" placeholder="Mail :">
             <i></i>
         </div>
 
         <div class="inputBox">
-            <input type="password" name="mdp" required="required">
-            <span>Mot de passe :</span>
+            <input type="password" name="mdp" required="required" placeholder="Mot de passe :">
             <i></i>
         </div>
 
