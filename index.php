@@ -62,7 +62,8 @@
                  </li>
                  <li class="art">
                     <div>
-                        <img class="photos" src="images/pc2.jpg" alt="">
+                        <img class="photos" src="images/pc2.jpg
+                        " alt="">
                     </div>
                     <span>Article</span>
                     <span class="prix">0$</span>
