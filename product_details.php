@@ -49,7 +49,7 @@
 
         <h1><?php echo $row['nom']; ?></h1>
         <div class="product-info">
-            <img width="200" src="<?php echo $row['image']; ?>" alt="<?php echo $row['nom']; ?>">
+            <img width="450" src="<?php echo $row['image']; ?>" alt="<?php echo $row['nom']; ?>">
             <p><strong>Prix:</strong> <?php echo $row['prix']; ?></p>
             <p><strong>Description:</strong> <?php echo $row['description']; ?></p>
         </div>

@@ -33,19 +33,23 @@
         }
 
         .rechercher {
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center items vertically */
             margin-right: auto;
-            margin-left: 450px;
+            margin-left: 450px; /* Adjust this margin as needed */
         }
-
-        .rechercher input{
+        .rechercher input {
+            flex: 1; /* Take up remaining space */
             height: 35px;
-            width: 250%;
+            width: 600px; /* Make the input fill the available width */
             border: none;
             outline: none;
             border-radius: 10px;
             padding: 10px;
             font-size: 16px;
         }
+
+
 
         .icons{
             text-align: right;
@@ -90,6 +94,58 @@
         .showlinks{
             height: 50vh;
         }
+
+        .links2{
+            margin-top: 80px;
+            background-color: #000000;
+            height: 0;
+            transition: 0.6s;
+        }
+        .links2 a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .links2 a:hover{
+            color: rgb(250, 70, 70); 
+        }
+
+        .links2 .nav-link {
+            display: none; /* Cacher les liens par défaut */
+            color: white; /* Ajouter les styles appropriés */
+            text-decoration: none;
+        }
+
+        .links2.showlinks .nav-link {
+            display: block; /* Afficher les liens lorsque la classe showlinks est présente */
+        }
+
+        .showlinks{
+            height: 50vh;
+        }
+
+
+        .rechercher button {
+            color: white;
+            background-color:black;
+            height: 35px; /* Increase button height */
+            width: 35px; /* Increase button width */
+            border: none;
+            outline: none;
+            border-radius: 8px; /* Decrease border radius */
+            padding-right: 10px; /* Increase padding for better visual */
+            font-size: 20px; /* Increase font size for better visibility */
+            margin-left: 7px;
+        }
+        .rechercher button:hover{
+            color: rgb(250, 70, 70);
+            height: 35px; /* Increase button height */
+            width: 35px; /* Increase button width */
+             /* Increase padding for better visual */
+            font-size: 18px; /* Increase font size for better visibility */
+        }
     </style>
 </head>
 <body>
@@ -101,6 +157,7 @@
             <form>
                 <input type="text" placeholder="Rechercher..." id="">
             </form>
+            <button type="button" class="fa fa-search"></button>
         </div>
         <div class="icons">
             <a href="#" class="fa fa-heart"></a>
@@ -117,11 +174,49 @@
         <a class="nav-link" href="pageConnexion.php">Se connecter</a>
         <a class="nav-link" href="#">Besoin d'aide</a>
     </div>
+    <div class="links2">
+        <a class="nav-link" href="#">Mon panier</a>
+        <a class="nav-link" href="#">Mes favoris</a>
+        <a class="nav-link" href="#">Mes précedentes commandes</a>
+    </div>
 
     <script>
+        // Ajouter un event listener au troisième élément "fa"
         document.getElementsByClassName("fa")[3].addEventListener("click", function(){
-            document.getElementsByClassName("links")[0].classList.toggle("showlinks");
+            // Fermer le menu déroulant de liens 2 (si ouvert)
+            var links2 = document.getElementsByClassName("links2")[0];
+            links2.classList.remove("showlinks");
+
+            // Ouvrir/fermer le menu déroulant de liens 1
+            var links1 = document.getElementsByClassName("links")[0];
+            links1.classList.toggle("showlinks");
         });
+
+        // Ajouter un event listener au quatrième élément "fa"
+        document.getElementsByClassName("fa")[2].addEventListener("click", function(){
+            // Fermer le menu déroulant de liens 1 (si ouvert)
+            var links1 = document.getElementsByClassName("links")[0];
+            links1.classList.remove("showlinks");
+
+            // Ouvrir/fermer le menu déroulant de liens 2
+            var links2 = document.getElementsByClassName("links2")[0];
+            links2.classList.toggle("showlinks");
+        });
+
+        // Ajouter un event listener pour fermer les menus déroulants lors d'un clic en dehors d'eux
+        document.addEventListener("click", function(event) {
+            // Vérifier si l'élément cliqué n'est pas dans les menus déroulants
+            if (!event.target.closest(".fa") && !event.target.closest(".links") && !event.target.closest(".links2")) {
+                // Fermer le menu déroulant de liens 1 (si ouvert)
+                var links1 = document.getElementsByClassName("links")[0];
+                links1.classList.remove("showlinks");
+
+                // Fermer le menu déroulant de liens 2 (si ouvert)
+                var links2 = document.getElementsByClassName("links2")[0];
+                links2.classList.remove("showlinks");
+            }
+        });
+
     </script>
 
 </body>
