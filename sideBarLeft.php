@@ -61,7 +61,7 @@
         .fa:hover{
             color: rgb(250, 70, 70);
         }
-        .sidebar{
+        .sidebar-left{
             position: fixed;
             top: 0;
             left: -250px;
@@ -115,7 +115,7 @@
             <a href="#" class="fa fa-bars"></a>
         </div>
     </div>
-    <div class="sidebar">
+    <div class="sidebar-left">
         <div class="links">
             <a class="nav-link" href="#">Filtrer par catégorie</a>
             <a class="nav-link" href="#">Trier par prix croissant</a>
