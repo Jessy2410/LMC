@@ -73,7 +73,7 @@
             z-index: 2;
         }
         .sidebar.showsidebar{
-            left: 0;
+            left: 100;
         }
         .links a{
             color: white;
@@ -125,7 +125,7 @@
 
     <script>
         document.getElementsByClassName("fa-bars")[0].addEventListener("click", function(){
-            document.querySelector(".sidebar").classList.toggle("showsidebar");
+            document.querySelector(".sidebar-left").classList.toggle("showsidebar");
         });
     </script>
 </body>
