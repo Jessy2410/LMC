@@ -29,6 +29,7 @@
 </div>
 
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btnConnexion'])) {
     $connexion = mysqli_connect("localhost", "root", "CDadvtam7347!", "lmc");
     if ($connexion === false) {
