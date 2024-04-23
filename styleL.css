@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.article-list {
+    width: 80%;
+    margin: 20px auto;
+    border: 3px solid #898989;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}   
+.article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #9c9b9b;
+    padding-bottom: 15px;
+}
+.article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.article img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+.article-details {
+    flex: 1;
+}
+.article-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.article-actions {
+    margin-top: 10px;
+}
+.btnB {
+    padding: 8px 15px;
+    background-color: #e91414;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.btnB:not(:last-child) {
+    margin-right: 10px;
+}
+
+.Listeprincipale .btnA{
+    padding: 8px 15px;
+    background-color: #e91414;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 170px;
+}
+
+.Listeprincipale{
+    margin-top: 150px;
+}

@@ -1,3 +1,15 @@
+<?php
+require_once 'Connect.php';
+
+// Démarrez la session
+session_start();
+
+// Vérifiez si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+     header("Location: pageConnexion2.php");
+     exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,54 +25,41 @@
 <body>
 
 <!-- Partie Navbar -->
-    
 <?php include("navbar.php")?>
 
 <!-- Patie Articles -->
-
 <section id="article">
     <h1 class="section_title">Nos Articles</h1>
-        <div class="gallery">
+    <div class="gallery">
+        <?php
+        // Requête pour récupérer les produits
+        $result = $connexion->query("SELECT * FROM produits");
 
-            <?php
-            // Connexion à la base de données
-            $mysqli = new mysqli("localhost", "root", "CDadvtam7347!", "LMC");
-
-            // Vérification de la connexion
-            if ($mysqli->connect_errno) {
-                echo "Échec de connexion à la base de données: " . $mysqli->connect_error;
-                exit();
+        // Affichage des produits
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="content">';
+            echo '<img src="' . $row['image'] . '" alt="' . $row['nom'] . '">';
+            echo '<h3>' . $row['nom'] . '</h3>';
+            echo '<p>' . $row['description'] . '</p>';
+            echo '<h6>' . $row['prix'] . '€</h6>';
+            echo '<ul class="ul">';
+            // Ajout de 5 étoiles
+            for ($i = 0; $i < 5; $i++) {
+                echo '<li><i class="fa fa-star checked"></i></li>';
             }
+            echo '</ul>';
+            // Formulaire pour soumettre l'ID du produit
+            echo "<form action='product_details.php' method='GET'>";
+            echo "<input type='hidden' name='id' value='{$row['id']}'>";
+            echo "<button type='submit' class='buy-1'>Acheter maintenant</button>";
+            echo "</form>";
+            echo '</div>';
+        }
 
-            // Requête pour récupérer les produits
-            $result = $mysqli->query("SELECT * FROM produits");
-
-            // Affichage des produits
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="content">';
-                echo '<img src="' . $row['image'] . '" alt="' . $row['nom'] . '">';
-                echo '<h3>' . $row['nom'] . '</h3>';
-                echo '<p>' . $row['description'] . '</p>';
-                echo '<h6>' . $row['prix'] . '€</h6>';
-                echo '<ul class="ul">';
-                // Ajout de 5 étoiles
-                for ($i = 0; $i < 5; $i++) {
-                    echo '<li><i class="fa fa-star checked"></i></li>';
-                }
-                echo '</ul>';
-                // Formulaire pour soumettre l'ID du produit
-                echo "<form action='product_details.php' method='GET'>";
-                echo "<input type='hidden' name='id' value='{$row['id']}'>";
-                echo "<button type='submit' class='buy-1'>Acheter maintenant</button>";
-                echo "</form>";
-                echo '</div>';
-            }
-
-            // Fermeture de la connexion
-            $mysqli->close();
-            ?>
-
-        </div>
+        // Fermeture de la connexion
+        $connexion->close();
+        ?>
+    </div>
 </section> 
 
 <script>
