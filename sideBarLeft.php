@@ -98,6 +98,21 @@
         }
     </style>
 </head>
+<?php
+    include 'navBar.php'; 
+    function sidebar_open() {
+        if (isset($_GET['showsidebar'])): ?>
+            <style>
+                .sidebar-left {
+                    display: block;
+                }
+            </style>
+        <?php endif; ?>
+    }
+    function sidebar_close() {
+        document.getElementById(".sidebar-left").classList.toggle("showsidebar");
+    }
+?>
 <body>
 <div class="header">
         <div class="logo">
