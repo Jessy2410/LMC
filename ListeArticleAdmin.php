@@ -11,13 +11,15 @@ include 'connect.php'; // Include the file to connect to the database
 <link rel="stylesheet" href="styleL.css">
 </head>
 <body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <?php
-    include("navbar.html");
+    include("navbar.php");
 ?>
 
 <div class="Listeprincipale">
-    <a href="AjoutArticle.php"><button class="btnA">Ajouter</button></a> <!-- Ajouter button -->
+    <a href="AjoutArticle.php"><button class="btnA">Ajouter</button><ion-icon class="icon" name="add-outline"></ion-icon></a> <!-- Ajouter button -->
     <div class="article-list">
         
         <?php

@@ -9,7 +9,7 @@
 <body>
   
 <?php
-  include("navbar.html");
+  include("navbar.php");
 ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -32,10 +32,10 @@
               <div class="table">
                 <div class="table-cell">
                   <p>
-                    Have an account?
+                    Déjà inscris ?
                   </p>
                   <div class="btn">
-                    Log in
+                    Se connecter
                   </div>
                 </div>
               </div>
@@ -44,10 +44,10 @@
               <div class="table">
                 <div class="table-cell">
                   <p>
-                    Don't have an account? 
+                    Toujours pas inscris? 
                   </p>
                   <div class="btn">
-                    Sign up
+                    S'inscrire
                   </div>
                 </div>
               </div>
@@ -55,26 +55,28 @@
           </div>
           <div class="container-form">
             <div class="form-item log-in">
+            <h2>Connectez-vous</h2>
               <div class="table">
-                <div class="table-cell">
-                  <input name="Username" placeholder="Username" type="text" />
-                  <input name="Password" placeholder="Password" type="Password" />
-                  <div class="btn">
-                    Log in
+                  <div class="table-cell">
+                      <form method="post" action="script_connexion.php">
+                          <input name="email" required placeholder="Email" type="text" />
+                          <input name="password" required placeholder="Password" type="password" />
+                          <button type="submit" class="btn">Se connecter</button>
+                      </form>
                   </div>
-                </div>
               </div>
             </div>
             <div class="form-item sign-up">
+            <h2>Inscrivez-vous</h2>
               <div class="table">
                 <div class="table-cell">
-                  <input name="email" placeholder="Email" type="text" />
-                  <input name="fullName" placeholder="Full Name" type="text" />
-                  <input name="Username" placeholder="Username" type="text" />
-                  <input name="Password" placeholder="Password" type="Password" />
-                  <div class="btn">
-                    Sign up
-                  </div>
+                  <form method="post" action="script_inscription.php">
+                      <input name="email" required placeholder="Email" type="text" />
+                      <input name="prenom" required placeholder="prénom" type="text" />
+                      <input name="nom" required placeholder="nom" type="text" />
+                      <input name="password" required placeholder="Password" type="Password" />
+                      <button type="submit" class="btn">S'inscrire</button>
+                  </form>
                 </div>
               </div>
             </div>

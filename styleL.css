@@ -44,6 +44,14 @@ body {
     border-radius: 3px;
     cursor: pointer;
     margin-right: 10px;
+    width: 97px;
+    height: 35px;
+    transition: 0.3s ease;
+}
+
+.btnB:hover {
+    width: 103px;
+    height: 38px;
 }
 .btnB:not(:last-child) {
     margin-right: 10px;
@@ -56,9 +64,35 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    margin-left: 170px;
+    margin-left: 830px;
+    width: 120px;
+    height: 45px;
+    font-size: 20px;
+    transition: 0.3s ease;
 }
 
-.Listeprincipale{
-    margin-top: 150px;
+.Listeprincipale .btnA:hover{
+    width: 130px;
+    height: 50px;
+    font-size: 22px;
+}
+
+.Listeprincipale {
+    margin-top: 250px; /* Adjust this value as needed */
+}
+
+.icon{
+    position: relative;
+    font-size: 50px;
+    color: black;
+    top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover{
+    position: relative;
+    font-size: 50px;
+    color: rgb(246, 7, 7);
+    top: 21px;
+    transform: rotate(90deg);
 }

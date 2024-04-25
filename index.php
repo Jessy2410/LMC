@@ -31,10 +31,11 @@ if (!isset($_SESSION['user_id'])) {
 <section id="article">
     <h1 class="section_title">Nos Articles</h1>
     <div class="gallery">
-        <?php
+    <?php
         // Requête pour récupérer les produits
         $result = $connexion->query("SELECT * FROM produits");
-
+        $product_id = $_GET['id'];
+        $sql = "SELECT * FROM produits WHERE id = $product_id";
         // Affichage des produits
         while ($row = $result->fetch_assoc()) {
             echo '<div class="content">';
@@ -48,10 +49,14 @@ if (!isset($_SESSION['user_id'])) {
                 echo '<li><i class="fa fa-star checked"></i></li>';
             }
             echo '</ul>';
-            // Formulaire pour soumettre l'ID du produit
+            // Formulaire pour soumettre l'ID du produit avec l'icône de cœur à sa droite
             echo "<form action='product_details.php' method='GET'>";
             echo "<input type='hidden' name='id' value='{$row['id']}'>";
             echo "<button type='submit' class='buy-1'>Acheter maintenant</button>";
+            echo "</form>";
+            echo "<form action='ajouter_fav.php' method='post'>";
+            echo "<input type='hidden' name='product_id' value='<?php echo $product_id; ?>'>";
+            echo "<button type='submit'><ion-icon class='ico' name='heart'></ion-icon></button>";
             echo "</form>";
             echo '</div>';
         }
@@ -59,7 +64,9 @@ if (!isset($_SESSION['user_id'])) {
         // Fermeture de la connexion
         $connexion->close();
         ?>
+        
     </div>
+
 </section> 
 
 <script>
