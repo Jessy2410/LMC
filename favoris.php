@@ -6,7 +6,7 @@ session_start();
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-     header("Location: page_connexion.php");
+     header("Location: pageConnexion2.php");
      exit();
 }
 // Récupérer les produits favoris de l'utilisateur
@@ -31,7 +31,7 @@ $result = $connexion->query($sql);
         }
         .container {
             width: 80%;
-            margin: 20px auto;
+            margin: 120px auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
@@ -64,7 +64,7 @@ $result = $connexion->query($sql);
             while ($row = $result->fetch_assoc()) {
                 ?>
                 <div class="favorite-item">
-                    <a href="product_details.php?id=<?php echo $row['id']; ?>">
+                    <a href="panierTest.php?id=<?php echo $row['id']; ?>">
                         <h3><?php echo $row['nom']; ?></h3>
                         <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['nom']; ?>">
                     </a>

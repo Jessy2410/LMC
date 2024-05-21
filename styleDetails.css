@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+}
+.product-info {
+    margin-top: 20px;
+}
+.product-info p {
+    margin: 10px 0;
+}
+
+.btnP{
+    background-color: rgb(255, 24, 24);
+    color: #fff;
+    border: none;
+    width: 185px;
+    height: 43px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-right: 9px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btnP:hover{
+    width: 189px;
+    height: 46px;
+}
+
+
+.iconeP{
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+}
+
+.iconeH{
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    margin-right: 5px;
+}
+

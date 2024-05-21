@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="styleNav.css">
 </head>
 <body>
+
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <nav>
+
   <div class="wrapper">
-    <div class="logo"><a href="#">L.M.C</a></div>
+    <div><a href="index.php"><img class="imageLogo" src="images/logoEcommerce.png" alt=""></a></div>
+    <div class="logo"><a href="index.php">L.M.C</a></div>
     <input class="inp" type="radio" name="slider" id="menu-btn">
     <input class="inp" type="radio" name="slider" id="close-btn">
     <ul class="nav-links">
@@ -32,22 +35,22 @@
         <div class="mega-box">
           <div class="content">
             <div class="row">
-              <img src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg" alt="">
+              <img src="images/p1.png" alt="">
             </div>
             <div class="row">
               <header>Mon compte</header>
               <ul class="mega-links">
                 <li class="lis"><a class="a" href="#">Mes informations</a></li>
-                <li class="lis"><a class="a" href="pageConnexion.php">Se Connecter</a></li>
-                <li class="lis"><a class="a" href="pageInscription.php">S'inscrire</a></li>
+                <li class="lis"><a class="a" href="pageConnexion2.php">Se Connecter</a></li>
+                <li class="lis"><a class="a" href="pageConnexion2.php">S'inscrire</a></li>
                 <li class="lis"><a class="a" href="pageDeconnexion.php">Se déconnecter</a></li>
               </ul>
             </div>
             <div class="row">
-              <header>Email Services</header>
+              <header>Articles</header>
               <ul class="mega-links">
                 <li><a href="ListeArticleAdmin.php">Gérer les articles</a></li>
-                <li><a href="#">Business Email</a></li>
+                <li><a href="dashboard.html">DashBoard</a></li>
                 <li><a href="#">Mobile Email</a></li>
                 <li><a href="#">Web Marketing</a></li>
               </ul>

@@ -25,15 +25,12 @@ a{
 }
 
 .content{
-    width: 23%;
+    width: 24%;
     margin: 35px;
     box-sizing: border-box;
     float: left;
     text-align: center;
-    
     border-radius: 20px;
-    padding-top: 0px;
-    padding-bottom: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: 0.2s;
     background: #f2f2f2;
@@ -49,7 +46,7 @@ a{
 
 img{
     width: 100%;
-    height: 300px;
+    height: 370px;
     text-align: center;
     margin: 0 auto;
     display: block;
@@ -100,7 +97,7 @@ li{
 
 .buy-1{
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     color: #fff;
     width: 60%;
     padding: 7px;
@@ -110,11 +107,17 @@ li{
     margin-top: 5px;
     border-radius: 12px;
     transition: 0.3s;
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
+
+form {
+    margin: 1px;
 }
 
 .buy-1:hover{
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
     color: #fff;
     width: 65%;
     padding: 10px;
@@ -143,14 +146,29 @@ li{
 
 .ico{
     position: relative;
-    font-size: 32px;
+    font-size: 38px;
     left: 147px;
+    bottom: 27px;
     cursor: pointer;
-    font-size: 35px;
     color: black;
 }
 
 .ico:hover{
     color: rgb(240, 57, 57);
+    font-size: 35px;
+}
+
+.ico2{
+    position: relative;
     font-size: 40px;
+    top: 19px;
+    left: 100px;
+    bottom: 15px;
+    cursor: pointer;    
+    color: black;
+}
+
+.ico2:hover{
+    color: rgb(240, 57, 57);
+    font-size: 35px;
 }

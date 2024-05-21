@@ -269,3 +269,8 @@ body {
   top: 30px;
   opacity: 0;
 }
+
+.container .container-form .sign-up .table .table-cell .btn{
+  position: relative;
+  bottom: 22px;
+}

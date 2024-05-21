@@ -1,7 +1,14 @@
 <?php
-// Inclure le fichier de connexion à la base de données
+require_once 'Connect.php';
 
-include 'Connect.php';
+// Démarrez la session
+session_start();
+
+// Vérifiez si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    header("Location: pageConnexion2.php");
+    exit();
+}
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,19 +18,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST["description"];
     $image = $_POST["image"];
 
-    // Vérifier si le champ de prix n'est pas vide
-    if(empty($prix)) {
-        $message = "Le champ Prix ne peut pas être vide.";
+    // Vérifier si tous les champs du formulaire sont remplis
+    if (empty($nom) || empty($prix) || empty($description) || empty($image)) {
+        $message = "Veuillez remplir tous les champs du formulaire.";
     } else {
         // Préparer et exécuter la requête SQL pour insérer les données dans la table "produits"
-        $sql = "INSERT INTO produits (nom, prix, description, image) VALUES ('$nom', '$prix', '$description', '$image')";
+        $sql = "INSERT INTO produits (nom, prix, description, image, nbConsult) VALUES (?, ?, ?, ?, 0)";
 
-        if ($connexion->query($sql) === TRUE) {
-            $message = "Le produit a été ajouté avec succès.";
-            // Réinitialiser les valeurs du formulaire après l'ajout
-            $_POST = array();
+        // Préparer la requête
+        $stmt = $connexion->prepare($sql);
+
+        // Liaison des paramètres et exécution de la requête
+        if ($stmt) {
+            $stmt->bind_param("sdsi", $nom, $prix, $description, $image);
+            if ($stmt->execute()) {
+                $message = "Le produit a été ajouté avec succès.";
+                // Réinitialiser les valeurs du formulaire après l'ajout
+                $_POST = array();
+            } else {
+                $message = "Erreur lors de l'ajout du produit : " . $connexion->error;
+            }
+            $stmt->close();
         } else {
-            $message = "Erreur lors de l'ajout du produit : " . $connexion->error;
+            $message = "Erreur de préparation de la requête : " . $connexion->error;
         }
     }
 }
@@ -41,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<form method="post" action="ListeArticleAdmin.php">
     <h1>Ajoutez un article</h1>
     <?php if(isset($message)) { ?>
         <div class="message"><?php echo $message; ?></div>
@@ -51,17 +68,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="gauche">
             <div class="groupe">
                 <label>Nom de l'article</label>
-                <input type="text" name="nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>" autocomplete="off" />
+                <input type="text" name="nom" value="<?php if(isset($_POST['nom'])) { echo htmlspecialchars($_POST['nom']); } ?>" autocomplete="off" required />
                 <i class="fas fa-desktop"></i>
             </div>
             <div class="groupe">
                 <label>Prix</label>
-                <input type="number" name="prix" value="<?php if(isset($_POST['prix'])) { echo $_POST['prix']; } ?>" autocomplete="off" />
+                <input type="number" name="prix" value="<?php if(isset($_POST['prix'])) { echo htmlspecialchars($_POST['prix']); } ?>" autocomplete="off" required />
                 <i class="fas fa-euro-sign"></i>
             </div>
             <div class="groupe">
                 <label>Lien de l'image de l'article</label>
-                <input type="text" name="image" value="<?php if(isset($_POST['image'])) { echo $_POST['image']; } ?>" autocomplete="off" />
+                <input type="text" name="image" value="<?php if(isset($_POST['image'])) { echo htmlspecialchars($_POST['image']); } ?>" autocomplete="off" required />
                 <i class="fas fa-image"></i>
             </div>
         </div>
@@ -69,12 +86,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="droite">
             <div class="groupe">
                 <label>Description</label>
-                <textarea name="description" placeholder="Saisissez ici..."><?php if(isset($_POST['description'])) { echo $_POST['description']; } ?></textarea>
+                <textarea name="description" placeholder="Saisissez ici..." required><?php if(isset($_POST['description'])) { echo htmlspecialchars($_POST['description']); } ?></textarea>
             </div>
         </div>
     </div>
 
-    <div class="pied-formulaire" align="center">
+    <div class="pied-formulaire">
         <button type="submit">Ajouter l'article</button>
     </div>
 </form>

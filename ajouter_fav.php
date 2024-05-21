@@ -6,7 +6,7 @@ session_start();
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-     header("Location: page_connexion.php");
+     header("Location: pageConnexion2.php");
      exit();
 }
 

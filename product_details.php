@@ -5,31 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("navbar.php")?>
     <title>Détails du produit</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        .product-info {
-            margin-top: 20px;
-        }
-        .product-info p {
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styleDetails.css">
 </head>
 <body>
     <div class="container">
@@ -51,11 +27,11 @@
             <p><strong>Description:</strong> <?php echo $row['description']; ?></p>
             <form action="ajouter_fav.php" method="post">
                 <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                <button type="submit">Ajouter aux favoris</button>
+                <button class="btnP" type="submit"><ion-icon class="iconeH" name="heart"></ion-icon>Ajouter aux favoris</button>
             </form>
             <form action="ajouter_panier.php" method="post">
                 <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                <button type="submit">Ajouter au panier</button>
+                <button class="btnP" type="submit"><ion-icon class="iconeP" name="cart"></ion-icon>Ajouter au panier</button>
             </form>
         </div>
 
