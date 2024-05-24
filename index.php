@@ -29,6 +29,8 @@ if (!isset($_SESSION['user_id'])) {
 
 <!-- Patie Articles -->
 <section id="article">
+    <h1 class="section_title2">Nos Partenaires</h1>
+    <?php include("collab.php")?>
     <h1 class="section_title">Nos Articles</h1>
     <div class="gallery">
     <?php
