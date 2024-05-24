@@ -27,10 +27,20 @@ if (!isset($_SESSION['user_id'])) {
 <!-- Partie Navbar -->
 <?php include("navbar.php")?>
 
+<div class="banner">
+    <video autoplay muted loop class="background-video">
+        <source src="video/videoPC.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    <div class="overlay">
+        <h1>Bienvenue sur notre boutique en ligne</h1>
+        <p>Découvrez nos nouveaux produits et promotions exclusives</p>
+        <a href="#article" class="cta-button">Boutique</a>
+    </div>
+</div>
+
 <!-- Patie Articles -->
 <section id="article">
-    <h1 class="section_title2">Nos Partenaires</h1>
-    <?php include("collab.php")?>
     <h1 class="section_title">Nos Articles</h1>
     <div class="gallery">
     <?php
@@ -72,10 +82,18 @@ if (!isset($_SESSION['user_id'])) {
         ?>
         
     </div>
-
+    <h1 class="section_title2">Nos Partenaires</h1>
+    <?php include("collab.php")?>
 </section> 
 
 <script>
+
+    document.querySelector('.cta-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#article').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
 
     var menu_toggle = document.querySelector('.menu_toggle');
     var menu = document.querySelector('.menu');
