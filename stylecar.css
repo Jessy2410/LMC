@@ -9,6 +9,7 @@
     box-shadow: black;
     border-radius: 10px;
     background: #ff0000;
+    margin-bottom: 100px;
 }
 
 .carousel {
@@ -30,28 +31,3 @@
     border-radius: 10px;
 }
 
-/* .prev, .next {
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-} */

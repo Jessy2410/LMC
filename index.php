@@ -39,6 +39,8 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 
+
+
 <!-- Patie Articles -->
 <section id="article">
     <h1 class="section_title">Nos Articles</h1>

@@ -60,9 +60,33 @@
                 <p class="text">Ajouter aux favoris</p>
             </button>
 
-
             
-
+            <h3>Note du produit</h3>
+            <form action="script_eval.php" method="POST">
+                <input type="hidden" name="id_produit" value="<?php echo $row['id']; ?>">
+                <label for="note">Note :</label>
+                <select name="note" id="note" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br>
+                <button type="submit">Soumettre</button>
+            </form>
+                <?php
+                $sql_eval = "SELECT AVG(note) AS moyenne FROM evaluations WHERE id_produit = $product_id";
+                $result_eval = $connexion->query($sql_eval);
+                if ($result_eval->num_rows > 0) {
+                    while($eval = $result_eval->fetch_assoc()) {
+                        echo "<p>Note: " . $eval['moyenne'] . "/5</p>";
+                    }
+                } else {
+                    echo "<p>Aucune évaluation pour ce produit.</p>";
+                }
+                ?>
+            
         </div>
     </div>
 
