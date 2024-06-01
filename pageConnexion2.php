@@ -14,12 +14,34 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        // $(document).ready(function() {
+        //     $(".info-item .btn").click(function(){
+        //         $(".container").toggleClass("log-in");
+        //     });
+        //     $(".container-form .btn").click(function(){
+        //         $(".container").addClass("active");
+        //     });
+        // });
+
         $(document).ready(function() {
             $(".info-item .btn").click(function(){
                 $(".container").toggleClass("log-in");
             });
+
             $(".container-form .btn").click(function(){
-                $(".container").addClass("active");
+                var valid = true;
+                $(this).closest('form').find('input').each(function() {
+                    if (!$(this).val()) {
+                        valid = false;
+                        $(this).css('border', '1px solid red'); // Highlight empty fields
+                    } else {
+                        $(this).css('border', 'none'); // Reset border if filled
+                    }
+                });
+
+                if (valid) {
+                    $(".container").addClass("active");
+                } 
             });
         });
     </script>
@@ -59,8 +81,8 @@
               <div class="table">
                   <div class="table-cell">
                       <form method="post" action="script_connexion.php">
-                          <input name="email" required placeholder="Email" type="text" />
-                          <input name="password" required placeholder="Password" type="password" />
+                          <input name="email" required placeholder="Email" type="text">
+                          <input name="password" required placeholder="Password" type="password">
                           <button type="submit" class="btn">Se connecter</button>
                       </form>
                   </div>
@@ -71,10 +93,10 @@
               <div class="table">
                 <div class="table-cell">
                   <form method="post" action="script_inscription.php">
-                      <input name="email" required placeholder="Email" type="text" />
-                      <input name="prenom" required placeholder="prénom" type="text" />
-                      <input name="nom" required placeholder="nom" type="text" />
-                      <input name="password" required placeholder="Password" type="Password" />
+                      <input name="email" required placeholder="Email" type="text">
+                      <input name="prenom" required placeholder="prénom" type="text">
+                      <input name="nom" required placeholder="nom" type="text">
+                      <input name="password" required placeholder="Password" type="Password">
                       <button type="submit" class="btn">S'inscrire</button>
                   </form>
                 </div>

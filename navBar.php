@@ -14,8 +14,7 @@
 <nav>
 
   <div class="wrapper">
-    <div><a href="index.php"><img class="imageLogo" src="images/logoEcommerce.png" alt=""></a></div>
-    <div class="logo"><a href="index.php">L.M.C</a></div>
+    <div><a href="index.php"><img class="imageLogo" src="images/LOGOLMCDEF.png" alt=""></a></div>
     <input class="inp" type="radio" name="slider" id="menu-btn">
     <input class="inp" type="radio" name="slider" id="close-btn">
     <ul class="nav-links">
