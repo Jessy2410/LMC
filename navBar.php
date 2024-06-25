@@ -28,7 +28,10 @@
       <li class="liste"><a class="lien" href="panier.php"><ion-icon class="ic" name="cart"></ion-icon></a></li>
       <li class="liste"><a class="lien" href="favoris.php"><ion-icon class="ic" name="heart"></ion-icon></a></li>
       <li class="liste">
-        <a href="#" class="lien"><ion-icon class="ic" name="person-circle-outline"></ion-icon></a>
+        <a href="#" class="lien">
+          <ion-icon class="ic" name="person-circle-outline"></ion-icon>
+        </a>
+        
         <input class="inp" type="checkbox" id="showMega">
         <label for="showMega" class="mobile-item">Mega Menu</label>
         <div class="mega-box">
