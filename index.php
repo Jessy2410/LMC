@@ -4,10 +4,20 @@ require_once 'Connect.php';
 // Démarrez la session
 session_start();
 
+// Variable pour stocker le prénom de l'utilisateur
+$prenom = "";
+
 // Vérifiez si l'utilisateur est connecté
-if (!isset($_SESSION['user_id'])) {
-     header("Location: pageConnexion2.php");
-     exit();
+if (isset($_SESSION['user_id'])) {
+    // Récupérez l'ID de l'utilisateur depuis la session
+    $user_id = $_SESSION['user_id'];
+
+    // Requête pour récupérer les informations de l'utilisateur
+    $result = $connexion->query("SELECT prenom FROM utilisateurs WHERE id = $user_id");
+    $row = $result->fetch_assoc();
+
+    // Récupérez le prénom de l'utilisateur
+    $prenom = $row['prenom'];
 }
 ?>
 <!DOCTYPE html>
@@ -27,12 +37,21 @@ if (!isset($_SESSION['user_id'])) {
 <!-- Partie Navbar -->
 <?php include("navbar.php")?>
 
+
+<?php
+        
+    // Requête pour récupérer les utlisateurs
+    $result = $connexion->query("SELECT * FROM utilisateurs");
+
+?>
+
 <div class="banner">
     <video autoplay muted loop class="background-video">
         <source src="video/videoPC.mp4" type="video/mp4">
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
     <div class="overlay">
+        <h1>Bonjour <?php echo htmlspecialchars($prenom); ?>,</h1>
         <h1>Bienvenue sur notre boutique en ligne</h1>
         <p>Découvrez nos nouveaux produits et promotions exclusives</p>
         <a href="#article" class="cta-button">Boutique</a>
@@ -55,7 +74,6 @@ if (!isset($_SESSION['user_id'])) {
             echo '<div class="content">';
             echo '<img src="' . $row['image'] . '" alt="' . $row['nom'] . '">';
             echo '<h3>' . $row['nom'] . '</h3>';
-            echo '<p>' . $row['description'] . '</p>';
             echo '<h6>' . $row['prix'] . '€</h6>';
             echo '<ul class="ul">';
             // Ajout de 5 étoiles

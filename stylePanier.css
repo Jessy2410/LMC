@@ -3,7 +3,7 @@
     padding: 0;
     font-family: sans-serif;
 }
-.hero{
+/* .hero{
     width: 100%;
 }
 .row{
@@ -61,16 +61,16 @@ h2{
     font-size: 26px;
     font-weight: bold;
     padding-top: 10px;
-}
-input{
+} */
+/* input{
     width: 30px;
     border: 1px solid #ccc;
     font-weight: bold;
     text-align: center;
-}
+} */
 
 
-.related{
+/* .related{
     width: 90%;
     margin: 0 auto 40px;
 }
@@ -84,8 +84,8 @@ input{
 }
 .items img{
     width: 100%;
-}
-.details{
+} */
+/* .details{
     margin-top: 20px;
 }
 .details p{
@@ -94,7 +94,7 @@ input{
 }
 .details .rating{
     margin: 10px 0;
-}
+} */
 
 
 *{
@@ -150,7 +150,20 @@ input{
     margin-top: 11px;
 }
 
- 
+.btnPanier{
+    background-color: rgb(255, 49, 49);
+    color: white;
+    border: 0px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 17px;
+}
+
+.ico{
+    position: relative;
+    top: 4px;
+    font-size: 20px;
+}
 
 .left {
     position: relative;
@@ -275,3 +288,132 @@ input{
     transition-duration: .5s;
   }
   
+  body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left {
+    flex: 2; /* Prend plus de place */
+    margin-right: 10px;
+}
+
+.right {
+    flex: 1; /* Prend moins de place */
+    max-width: 300px; /* Limite la largeur de la partie droite */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btnPanier {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ff2121;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btnPanier .ico {
+    margin-right: 10px;
+}
+
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-section h2 {
+    margin-bottom: 10px;
+}
+
+.comment-section form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btnCommentaire {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: gray;
+}
