@@ -75,6 +75,7 @@ if (isset($_SESSION['user_id'])) {
             echo '<img src="' . $row['image'] . '" alt="' . $row['nom'] . '">';
             echo '<h3>' . $row['nom'] . '</h3>';
             echo '<h6>' . $row['prix'] . '€</h6>';
+            echo '<h6>' . $row['ind_repar'] . '</h6>';
             echo '<ul class="ul">';
             // Ajout de 5 étoiles
             for ($i = 0; $i < 5; $i++) {
