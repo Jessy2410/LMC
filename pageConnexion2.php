@@ -81,6 +81,8 @@
               <div class="table">
                   <div class="table-cell">
                       <form method="post" action="script_connexion.php">
+                          <input name="Nom" type="text" required placeholder="Nom">
+                          <input name="Prenom" type="text" required placeholder="Prenom">
                           <input name="email" required placeholder="Email" type="text">
                           <input name="password" required placeholder="Password" type="password">
                           <button type="submit" class="btn">Se connecter</button>
